@@ -12,7 +12,7 @@ body,html{
 }
 
 .header-section{
-  background:#050405;
+  height: 60px;
   max-height: 100px;
   padding: 10px;
 }
@@ -20,11 +20,11 @@ body,html{
 
 .banner{
   padding: 15px 5px 5px 20px;
-  font-family:'Rokkitt', serif;
-  font-size: 4em;
-  font-weight: 500;
+  font-family: 'IM Fell English', serif;
+  font-size: 3.5em;
+  font-weight: 600;
   font-style: italic;
-  background:#dd1d1d;
+  background:none;
   height:100%;
   max-height: 100%;
   display: inline-block;
@@ -39,9 +39,10 @@ body,html{
 .video-overlay{
   position: absolute;
   width: 100%;
+  height:1000px;
   min-height: 100%;
-  background-color: rgba(0,0,0,1);
-  z-index:-150;
+  background-color: rgba(0,0,0,0.4);
+  z-index:-50;
 }
 .background-video{
   position: fixed;
@@ -101,10 +102,30 @@ body,html{
 
 .middle-footer{
   background:none;
-  font-size: 2.2em;
 }
 
 .center-section{
-  display: block;
-  margin:0 auto;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background: none;
 }
+
+.center-title{
+  font-family: 'IM Fell English', serif;
+  font-size: 6em;
+  text-align: center;
+  background: red;
+  margin:10px 0;
+}
+
+.center-description{
+  display: block;
+  text-align: center;
+  font-family: 'Lato',sans-serif;
+  background: green;
+  margin:10px 0;
+}
+
+.
