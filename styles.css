@@ -104,14 +104,24 @@ a:hover{
 }
 
 .left-footer, .middle-footer, .right-footer{
-  text-align: center;
   display: inline-block;
   height: 100%;
   width:30%;
   font-size:1.23em;
   color:white;
   font-family: 'Montserrat', sans-serif;
-  padding:15px;
+  padding-top:15px;
+}
+
+.left-footer{
+    text-align: left;
+    padding-left: 35px;
+}
+
+.right-footer{
+  text-align: right;
+  padding-left: 30px;
+  background: red;
 }
 
 .left-footer{
@@ -187,11 +197,10 @@ a:hover{
 }
 
 .center-buttons{
-  display: block;
-  width:250px;
-  margin: 30px auto;
-  background:black;
-  padding:10px 30px;
+  display: inblock;
+  width:170px;
+  margin:30px auto;
+  padding:10px 0px;
 }
 
 .watch-button, .more-button{
@@ -200,12 +209,13 @@ a:hover{
   text-decoration: none;
   font-family: 'Montserrat',sans-serif;
   font-size:0.9em;
-  display: inline-block;
+  display: inline;
   height: 30px;
   width: 70px;
   border:none;
   color: #fff;
   transition: all 0.3s ease;
+  margin: 0px 5px;
 }
 
 .watch-button:hover,.more-button:hover{
