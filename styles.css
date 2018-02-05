@@ -18,31 +18,53 @@ body,html{
   padding: 10px;
   background: none;
   transition: all 0.5s ease;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-section:hover{
   background: rgba(0,0,0,0.5);
 }
 
+.banner, .header-links{
+  width: 50%;
+  display: flex;
+}
+
 .banner{
   padding: 0 20px;
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Reem Kufi', cursive;
   font-size: 3.5em;
   font-weight: 600;
   font-style: italic;
   background:none;
   height:100%;
   max-height: 100%;
-  display: inline-block;
-  background:none;
+  justify-content: flex-start;
 }
 
+.header-links a{
+  padding:10px;
+  margin:5px;
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  background:none;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+}
 
+.header-links{
+  background:none;
+  padding:10px;
+  justify-content: flex-end;
+}
 
 .video-section{
   background:none;
-  max-height: 100%;
-  height: 100%;
+  max-height: 80%;
+  height: 80%;
 }
 
 .video-overlay{
@@ -76,73 +98,41 @@ body,html{
   min-height: 50px;
 }
 
-.header-links a{
-  padding:10px;
-  margin:5px;
-  display: inline-block;
-  width: 50px;
-  text-align: center;
-  background:none;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 200;
-}
-
-.header-links, .banner{
-  display: inline;
-}
-
-.header-links{
-  background:none;
-  float:right;
-  padding:10px;
-}
-
 a:hover{
   font-weight: 600;
   cursor: pointer;
 }
 
+.footer-section{
+  display: flex;
+  justify-content: space-between;
+}
+
 .left-footer, .middle-footer, .right-footer{
-  display: inline-block;
   height: 100%;
-  width:30%;
+  width:33%;
   font-size:1.23em;
+  background:none;
   color:white;
   font-family: 'Montserrat', sans-serif;
-  padding-top:15px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
 .left-footer{
-    text-align: left;
-    padding-left: 35px;
-}
-
-.right-footer{
-  text-align: right;
+  justify-content: flex-start;
   padding-left: 30px;
-  background: red;
-}
-
-.left-footer{
-  background:none;
-}
-
-.right-footer{
-  background:none;
 }
 
 .middle-footer{
-  background:none;
-  transition: all 0.3s ease;
+    justify-content: center;
 }
 
 .middle-footer:hover{
   font-weight: bold;
   cursor: pointer;
   animation: bounce 2s infinite;
-  -ms-transform: scale(3);
-  transform: scale(3);
 }
 
 @keyframes bounce {
@@ -170,6 +160,12 @@ a:hover{
 }
 
 
+.right-footer{
+  justify-content: flex-end;
+  padding-right: 38px;
+}
+
+
 .center-section{
   width: 100%;
   min-width: 100%;
@@ -180,7 +176,7 @@ a:hover{
 }
 
 .center-title{
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Reem Kufi', cursive;
   font-size: 6em;
   text-align: center;
   background: none;
@@ -214,7 +210,7 @@ a:hover{
   width: 70px;
   border:none;
   color: #fff;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.7s ease;
   margin: 0px 5px;
 }
 
