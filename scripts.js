@@ -1,8 +1,7 @@
-var watchButton = document.getElementById('watch-button');
+var vHeight = $(window).height(),
+    vWidth = $(window).width(),
+    videoBg = $(".video-background"),
+    videoOverlay = $(".video-overlay");
 
-playVideo = function(){
-  console.log("Playing video");
-};
-
-
-watchButton.addEventListener("click",playVideo);
+//videoBg.css({"height":vHeight,"width":vWidth});
+videoOverlay.css({"height":vHeight,"width":vWidth});
