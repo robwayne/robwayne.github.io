@@ -1,65 +1,118 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
 
-	<head>
-
-		<meta charset="utf-8"/>
-
-		<meta name="viewport" content="width=device-width">
-
-		<title>closure</title>
-
-    <!-- IMPORTED RESOURCES !-->
-    <link href="https://fonts.googleapis.com/css?family=Rokkitt:400,700" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
+    <!-- IMPORTED RESOURCES -->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Lato:300i" rel="stylesheet">
-    <!-- IMPORTED RESOURCES !-->
-		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<link href="https://fonts.googleapis.com/css?family=Lato:300i,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet">
+    <!-- IMPORTED RESOURCES -->
+    <link rel="stylesheet" type="text/css" href="css/mawbutton.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
 
-	</head>
-
-	<body>
-
-    <div class="main-section">
-			<div class="video-section">
-				<div class="video-overlay"></div>
-				<video autoplay muted loop class="background-video">
-					<source src="assets/closure-thumbnail.mp4" type="video/mp4">
-				</video>
-			</div>
-      <div class="header-section">
-        <div class="banner">
-          closure
-        </div>
+  <body>
+    <!-- <audio autoplay id="background-audio" onloadeddata="lowerVolume()">
+      <source src="assets/background-audio.mp3" type="audio/mpeg">
+    </audio> -->
+    <div class="header-section">
+      <div class="header-bar">
+        <div class="title">closure</div>
         <div class="header-links">
-          <a href="#">CAST</a>
-          <a href="#">REVIEWS</a>
-          <a href="#">BTS</a>
+          <a href="#" class="hvr-underline-from-left">CAST</a>
+          <a href="#" class="hvr-underline-from-left">REVIEWS</a>
+          <a href="#" class="hvr-underline-from-left">BTS</a>
         </div>
       </div>
-			<div class="center-section">
-				<div class="center-title">closure</div>
-				<div class="center-description">30 seconds of heartbreak</div>
-				<div class="center-buttons">
-					<button class="watch-button" id="watch-button">Watch</button>
-					<button class="more-button" id="more-button">More Info</button>
-				</div>
-			</div>
-      <div class="footer-section">
-        <div class="left-footer">&copy; A Robert Gordon Production</div>
-        <div class="middle-footer"><i class="fas fa-angle-down"></i></div>
-        <div class="right-footer">NYUAD Interactive Media 2018</div>
+      <div class="header-video">
+        <div class="video-overlay"></div>
+        <video muted autoplay loop class="video-background" poster="assets/closure-poster.png">
+          <source src="assets/closure-thumbnail.mp4" type="video/mp4">
+        </video>
       </div>
-			<div class="content">
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
- 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
- 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
-			</div>
+      <div class="title-container">
+        <h1 class="title banner">closure</h1>
+        <h4 class="slogan" id="slogan"></h4>
+        <button class="play-btn hvr-wobble-horizontal" id="play-btn"><i class="fas fa-play"></i></button>
+      </div>
+      <div class="scroll-down"><i class="fas fa-angle-down"></i></div>
     </div>
-    <!-- the script tags go at the bottom of the page, so that they are loaded last -->
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<script src="scripts.js"></script>
-	</body>
+    <div class="reviews-sample-section">
+      <div class="review">
+        <div class="review-img"><img src="assets/nytimes.png" alt="review image"></div>
+        <div class="review-content">
+          <p>The best film of 2018 - <strong> New York Times</strong></p>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-img"><img src="assets/gleaner.png" alt="review image"></div>
+        <div class="review-content">
+          <p>Another Jamaican success story - <strong> Gleaner</strong></p>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-img"><img src="assets/imdb.png" alt="review image"></div>
+        <div class="review-content">
+          <p>10.0. Tragic yet heart warming film - <strong>IMDB</strong></p>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-img"><img src="assets/netflix.png" alt="review image"></div>
+        <div class="review-content">
+          <p>We have to get this on on our platform - <strong> Netflix</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="content" id="content">
+      <div class="cast" id="cast">
+        <div class="member">
+          <div class="member-pic">
+            <img src="assets/gaby.jpg" alt="gaby">
+          </div>
+          <div class="member-desc"></div>
+          <div class="member-name">Gaby</div>
+        </div>
+        <div class="member">
+          <div class="member-pic">
+            <img src="assets/hatim.jpg" alt="hatim">
+          </div>
+          <div class="member-desc"></div>
+          <div class="member-name">Hatim</div>
+        </div>
+        <div class="member">
+          <div class="member-pic">
+            <img src="assets/robert.jpg" alt="robert">
+          </div>
+          <div class="member-desc"></div>
+          <div class="member-name">Robert</div>
+        </div>
+        <div class="member">
+          <div class="member-pic">
+            <img src="assets/sara.jpg" alt="sara">
+          </div>
+          <div class="member-desc"></div>
+          <div class="member-name">Sara</div>
+        </div>
+      </div>
+      <div class="reviews-main" id="reviews-main"></div>
+      <div class="bts" id="bts"></div>
+    </div>
+    <div class="scroll-up"></div>
+    <div class="footer-section">
+      Robert Gordon 2018
+    </div>
+
+    <!-- IMPORTED SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
+    <script src="js/mawbutton.js"></script>
+    <!-- IMPORTED SCRIPTS -->
+    <script src="js/scripts.js"></script>
+
+  </body>
 </html>
