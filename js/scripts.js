@@ -1,11 +1,12 @@
 var windowHeight = $(window).height()*0.9,
-    windowWidth = $(window).width()*0.998,
+    windowWidth = $(window).width(),
     videoHeader = $(".header-video"),
     videoBg = $(".video-background");
 
 videoHeader.css({"height":windowHeight, "width":windowWidth});
 
-$("#play-btn").click(function(){
+var playButton = $("#play-btn");
+playButton.click(function(){
   $(this).mawbutton({
     speed:400,
     effect:'ripple',
@@ -13,47 +14,66 @@ $("#play-btn").click(function(){
   });
 });
 
-$("#cast").mouseenter(function(){
-   $(this).addClass("strike");
+var reviewSample = $(".review");
+reviewSample.each(function(){
+  $(this).mouseenter(function(){
+    $(this).addClass("scale");
+    $(this).children().addClass("show");
+  });
+  $(this).mouseleave(function(){
+    $(this).removeClass("scale");
+    $(this).children().removeClass("show");
+  });
 });
 
-$("#cast").mouseleave(function(){
-   $(this).removeClass("strike");
-});
+// playButton.mouseenter(function(){
+//   $(this).addClass("hvr-bounce-to-right");
+// });
+//
+// playButton.mouseleave(function(){
+//   $(this).removeClass("hvr-bounce-to-right");
+// });
 
-$("#reviews").mouseenter(function(){
-   $(this).addClass("strike");
-});
+// $("#cast").mouseenter(function(){
+//    $(this).addClass("strike");
+// });
+//
+// $("#cast").mouseleave(function(){
+//    $(this).removeClass("strike");
+// });
+//
+// $("#reviews").mouseenter(function(){
+//    $(this).addClass("strike");
+// });
+//
+// $("#reviews").mouseleave(function(){
+//    $(this).removeClass("strike");
+// });
+//
+// $("#bts").mouseenter(function(){
+//    $(this).addClass("strike");
+// });
+//
+// $("#bts").mouseleave(function(){
+//    $(this).removeClass("strike");
+// });
+//
+// $(".slogan-2").mouseenter(function(){
+//    $(this).css({"color":"#FF1D15"}).addClass("strike");
+// });
+//
+// $(".slogan-2").mouseleave(function(){
+//    $(this).css({"color":"#FFF"}).removeClass("strike");
+// });
 
-$("#reviews").mouseleave(function(){
-   $(this).removeClass("strike");
-});
-
-$("#bts").mouseenter(function(){
-   $(this).addClass("strike");
-});
-
-$("#bts").mouseleave(function(){
-   $(this).removeClass("strike");
-});
-
-$(".slogan-2").mouseenter(function(){
-   $(this).css({"color":"#FF1D15"}).addClass("strike");
-});
-
-$(".slogan-2").mouseleave(function(){
-   $(this).css({"color":"#FFF"}).removeClass("strike");
-});
 
 
 new TypeIt('#slogan', {
-  strings: [
-      "An Experience to cry for",
-      "Death without closure is a loss",
-      "The closure of life is death",
-      "30 seconds of heart break",
-    ],
-  speed: 180,
+  speed: 100,
   breakLines:false,
   autoStart: true
-});
+}).type("an experience to die").pause(500).delete(3).type("<strong>cry</strong> for<span>;</span>").pause(1200).delete()
+.options({speed:250}).type("love...").pause(1000).delete(5)
+.options({speed:300}).type("ss<span>;</span>").pause(1200).delete()
+.options({speed:150}).type("the unexpected").pause(500).type(" <strong>expected</strong><span>;</span>").pause(1200).delete()
+.type("30 seconds of <strong>heart break</strong>.");

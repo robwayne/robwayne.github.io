@@ -5,3 +5,7 @@ var vHeight = $(window).height(),
 
 //videoBg.css({"height":vHeight,"width":vWidth});
 videoOverlay.css({"height":vHeight,"width":vWidth});
+
+$(document).ready({
+  
+});
