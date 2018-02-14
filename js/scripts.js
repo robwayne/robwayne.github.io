@@ -13,7 +13,11 @@ $(document).ready(function(){
       effect:'ripple',
       scale:2
     });
+
+    //playVideo
   });
+
+
 
   var reviewSample = $(".review");
   reviewSample.each(function(){
@@ -25,17 +29,6 @@ $(document).ready(function(){
     $(this).mouseleave(function(){
       $(this).removeClass("scale");
       $(this).children().removeClass("show");
-    });
-  });
-
-  var crew = $(".crew");
-  crew.each(function(){
-    $(this).mouseenter(function(){
-      $(this).children().css({"visibility":"visible"})
-    });
-
-    $(this).mouseleave(function(){
-      $(this).children().css({"visibility":"visible"})
     });
   });
 
@@ -60,5 +53,29 @@ $(document).ready(function(){
     var bgAudio = $("#background-audio");
     bgAudio.volume = 0;
   }
+
+  $("#first-crew").hover(function(){
+    $("#gaby").css({"visibility": "visible"});
+  },function(){
+    $("#gaby").css({"visibility": "hidden"});
+  });
+
+  $("#second-crew").hover(function(){
+    $("#hatim").css({"visibility": "visible"});
+  },function(){
+    $("#hatim").css({"visibility": "hidden"});
+  });
+
+  $("#third-crew").hover(function(){
+    $("#robert").css({"visibility": "visible"});
+  },function(){
+    $("#robert").css({"visibility": "hidden"});
+  });
+
+  $("#last-crew").hover(function(){
+    $("#sara").css({"visibility": "visible"});
+  },function(){
+    $("#sara").css({"visibility": "hidden"});
+  });
 
 });
