@@ -279,11 +279,57 @@ button.play-btn:hover{
 
 /* -------------------- CONTENT SECTION -------------------- */
 .content{
-  background: blue;
   margin: 20px 0;
-  width:100%;
-  height:100%;
+
 }
+
+/* ----CAST SECTION---*/
+.cast{
+  width: 100vw;
+  height: 650px;
+  background: #1D2227;
+  text-align:center;
+}
+
+h6{
+  font-family: 'Nanum Brush Script', cursive;
+  font-size:3em;
+  margin-bottom: 20px;
+}
+
+.crew{
+  width:20%;
+  height:300px;
+  background:green;
+  display: inline-block;
+  margin-left:30px;
+}
+
+.crew-inner{
+  width:80%;
+  height: 80%;
+  margin: 0 auto;
+  background: red;
+}
+
+.crew-img{
+  width:100%;
+  height:80%;
+  background:#7B7B7B;
+}
+
+.crew-info{
+  width: 100%;
+  height: 20%;
+  background: blue;
+}
+
+.crew-inner:not(#first-crew):not(#third-crew){
+    margin-top:50px;
+}
+
+
+/* ----CAST SECTION---*/
 
 /* -------------------- CONTENT SECTION -------------------- */
 

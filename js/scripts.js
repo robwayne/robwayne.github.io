@@ -33,48 +33,6 @@ $(document).ready(function(){
     }, 1000);
   });
 
-  // playButton.mouseenter(function(){
-  //   $(this).addClass("hvr-bounce-to-right");
-  // });
-  //
-  // playButton.mouseleave(function(){
-  //   $(this).removeClass("hvr-bounce-to-right");
-  // });
-
-  // $("#cast").mouseenter(function(){
-  //    $(this).addClass("strike");
-  // });
-  //
-  // $("#cast").mouseleave(function(){
-  //    $(this).removeClass("strike");
-  // });
-  //
-  // $("#reviews").mouseenter(function(){
-  //    $(this).addClass("strike");
-  // });
-  //
-  // $("#reviews").mouseleave(function(){
-  //    $(this).removeClass("strike");
-  // });
-  //
-  // $("#bts").mouseenter(function(){
-  //    $(this).addClass("strike");
-  // });
-  //
-  // $("#bts").mouseleave(function(){
-  //    $(this).removeClass("strike");
-  // });
-  //
-  // $(".slogan-2").mouseenter(function(){
-  //    $(this).css({"color":"#FF1D15"}).addClass("strike");
-  // });
-  //
-  // $(".slogan-2").mouseleave(function(){
-  //    $(this).css({"color":"#FFF"}).removeClass("strike");
-  // });
-
-
-
   new TypeIt('#slogan', {
     speed: 100,
     breakLines:false,
@@ -84,6 +42,12 @@ $(document).ready(function(){
   .options({speed:300}).type("ss<span>;</span>").pause(1200).delete()
   .options({speed:150}).type("the unexpected").pause(500).type(" <strong>expected</strong><span>;</span>").pause(1200).delete()
   .type("30 seconds of <strong>heart break</strong>.");
+
+
+  $(".cast").masonry({
+    itemSelector: '.member',
+    columnWidth:4
+  });
 
   function lowerVolume(){
     var bgAudio = $("#background-audio");
