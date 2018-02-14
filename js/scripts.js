@@ -14,10 +14,23 @@ $(document).ready(function(){
       scale:2
     });
 
-    //playVideo
+    $(".full-video-container").show();
+    $(".close").show();
+    $(".content").hide();
+    $(".header-section").hide();
+    $(".reviews-sample-section").hide();
+    $(".footer-section").hide();
   });
 
 
+$(".close").click(function(){
+  $(".full-video-container").hide();
+  $(".close").hide();
+  $(".content").show();
+  $(".header-section").show();
+  $(".reviews-sample-section").show();
+  $(".footer-section").show();
+});
 
   var reviewSample = $(".review");
   reviewSample.each(function(){

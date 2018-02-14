@@ -378,6 +378,35 @@ h6{
 
 /* ----CAST SECTION---*/
 
+.full-video-container{
+  width: 100%;
+  height: 100%;
+  display:none;
+}
+
+.close{
+  border:none;
+  width:60px;
+  height:60px;
+  position: absolute;
+  right: 30px;
+  top:60px;
+  background: none;
+  font-family: 'Lato',sans-serif;
+  font-size:1em;
+  color: #fff;
+  background: black;
+  z-index: 1100;
+  display: none;
+  border-radius: 50%;
+}
+
+.full-video{
+  z-index:1000;
+  width: 100%;
+  height: 90%;
+}
+
 /* -------------------- CONTENT SECTION -------------------- */
 
 
