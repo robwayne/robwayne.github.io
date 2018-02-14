@@ -286,30 +286,49 @@ button.play-btn:hover{
 /* ----CAST SECTION---*/
 .cast{
   width: 100vw;
-  height: 650px;
-  background: #1D2227;
+  height: 100vh;
+  background: #1D2227 !important;
   text-align:center;
+  margin:50px 0;
+  padding-top:10px;
 }
 
 h6{
-  font-family: 'Nanum Brush Script', cursive;
-  font-size:3em;
-  margin-bottom: 20px;
+  font-family: 'Lato',sans-serif; //'Nanum Brush Script', cursive;
+  font-size:2em;
+  color:#FFF;
+  margin-bottom:30px;
+}
+
+.show-crew-details{
+  opacity: 1;
+  border: 3px solid red;
 }
 
 .crew{
   width:20%;
-  height:300px;
-  background:green;
+  height:350px;
+  background:none;
   display: inline-block;
   margin-left:30px;
+  transition: all .6s ease;
+  opacity:0.5;
 }
+
+.crew:hover{
+  transform: translateY(-15px);
+  opacity: 1;
+}
+
 
 .crew-inner{
   width:80%;
   height: 80%;
   margin: 0 auto;
-  background: red;
+  background: none;
+  position:relative;
+  right:0;
+  left:0;
 }
 
 .crew-img{
@@ -318,16 +337,45 @@ h6{
   background:#7B7B7B;
 }
 
+.crew-img img{
+  width: 100%;
+  height: 100%;
+  padding:0;
+  margin:0;
+}
+
 .crew-info{
   width: 100%;
   height: 20%;
-  background: blue;
+  background: none;
+  padding:5px 0;
 }
+
+
 
 .crew-inner:not(#first-crew):not(#third-crew){
-    margin-top:50px;
+  top:50px;
 }
 
+.crew-info p{
+  margin:0;
+  padding:0;
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 200;
+  font-size:1.2em;
+  color:white;
+}
+
+.crew-info p.crew-name{
+  font-weight: 600;
+  font-size:1.4em;
+  color:#2098D1;
+}
+
+.crew-info p.title{
+  font-weight:200;
+  font-size: 1.2em;
+}
 
 /* ----CAST SECTION---*/
 

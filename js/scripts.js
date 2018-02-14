@@ -21,9 +21,21 @@ $(document).ready(function(){
       $(this).addClass("scale");
       $(this).children().addClass("show");
     });
+
     $(this).mouseleave(function(){
       $(this).removeClass("scale");
       $(this).children().removeClass("show");
+    });
+  });
+
+  var crew = $(".crew");
+  crew.each(function(){
+    $(this).mouseenter(function(){
+      $(this).children().css({"visibility":"visible"})
+    });
+
+    $(this).mouseleave(function(){
+      $(this).children().css({"visibility":"visible"})
     });
   });
 
@@ -43,11 +55,6 @@ $(document).ready(function(){
   .options({speed:150}).type("the unexpected").pause(500).type(" <strong>expected</strong><span>;</span>").pause(1200).delete()
   .type("30 seconds of <strong>heart break</strong>.");
 
-
-  $(".cast").masonry({
-    itemSelector: '.member',
-    columnWidth:4
-  });
 
   function lowerVolume(){
     var bgAudio = $("#background-audio");
