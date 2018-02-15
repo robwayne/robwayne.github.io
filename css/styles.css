@@ -293,10 +293,10 @@ button.play-btn:hover{
 }
 
 h6{
-  font-family: 'Lato',sans-serif; //'Nanum Brush Script', cursive;
-  font-size:2em;
+  font-family: 'Montserrat',sans-serif; //'Nanum Brush Script', cursive;
+  font-size:1.2em;
   color:#FFF;
-  margin-bottom:30px;
+  margin-bottom:100px;
 }
 
 .show-crew-details{
@@ -310,6 +310,7 @@ h6{
   background:none;
   display: inline-block;
   margin-left:30px;
+  margin-top:40px;
   transition: all .6s ease;
   opacity:0.5;
 }
@@ -380,8 +381,13 @@ h6{
 
 .full-video-container{
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display:none;
+}
+
+.full-video{
+  height: 100%;
+  width: 100%;
 }
 
 .close{
@@ -389,8 +395,8 @@ h6{
   width:60px;
   height:60px;
   position: absolute;
-  right: 30px;
-  top:60px;
+  right: 10px;
+  top:10px;
   background: none;
   font-family: 'Lato',sans-serif;
   font-size:1em;
@@ -401,32 +407,62 @@ h6{
   border-radius: 50%;
 }
 
+.close:hover{
+  cursor: pointer;
+}
+
 .full-video{
   z-index:1000;
   width: 100%;
   height: 90%;
 }
 
+.scroll-up{
+  color:white;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border-radius: 50%;
+  text-align: center;
+  position: fixed;
+  bottom:40px;
+  right:50px;
+  font-size:1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index:900;
+  transition: background 1s ease;
+}
+
+.scroll-up:hover{
+  background: #2098D1;
+  cursor: pointer;
+}
+
+
+/* ----REVIEWS SECTION---*/
+
+/* ----REVIEWS SECTION---*/
+
 /* -------------------- CONTENT SECTION -------------------- */
 
 
 /* -------------------- FOOTER SECTION -------------------- */
 .footer-section{
-  background: rgba(0,0,0,0.2);
   display: block;
   height:50px;
   width: 100%;
-  position: fixed;
   right: 0;
   left:0;
   bottom:0;
   font-family: 'Montserrat',sans-serif;
   font-size: 1.2em;
   color:#7B7B7B;
-  padding-left: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
+
 /* -------------------- FOOTER SECTION -------------------- */
 
 

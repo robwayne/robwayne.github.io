@@ -23,14 +23,14 @@ $(document).ready(function(){
   });
 
 
-$(".close").click(function(){
-  $(".full-video-container").hide();
-  $(".close").hide();
-  $(".content").show();
-  $(".header-section").show();
-  $(".reviews-sample-section").show();
-  $(".footer-section").show();
-});
+  $(".close").click(function(){
+    $(".full-video-container").hide();
+    $(".close").hide();
+    $(".content").show();
+    $(".header-section").show();
+    $(".reviews-sample-section").show();
+    $(".footer-section").show();
+  });
 
   var reviewSample = $(".review");
   reviewSample.each(function(){
@@ -49,6 +49,30 @@ $(".close").click(function(){
     $('html, body').animate({
       scrollTop: $("#content").offset().top
     }, 1000);
+  });
+
+  $(".scroll-up").click(function(){
+    $('html, body').animate({
+      scrollTop: $(".header-section").offset().top
+    },1000);
+  });
+
+  $("a").click(function(event){
+    if($(this).hash !== ""){
+      console.log(this.hash);
+      event.preventDefault();
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      },1000, function(){
+        if (hash !== "#home"){
+          window.location.hash = hash;
+        } else{
+          window.location.hash = "";
+        }
+      });
+    }
   });
 
   new TypeIt('#slogan', {
