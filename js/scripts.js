@@ -57,7 +57,7 @@ $(document).ready(function(){
     },1000);
   });
 
-  $("a").click(function(event){
+  $(".header-links a").click(function(event){
     if($(this).hash !== ""){
       console.log(this.hash);
       event.preventDefault();

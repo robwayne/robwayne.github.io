@@ -1,3 +1,5 @@
+/*Taken from: https://github.com/yuhua-chen/MAWButton/ */
+
 (function($){
 
 	$.fn.mawbutton = function (options) {
