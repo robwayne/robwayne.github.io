@@ -293,6 +293,7 @@ button.play-btn:hover{
   margin:0;
   padding:10px 0;
   text-align:center;
+
 }
 
 h6{
@@ -442,6 +443,7 @@ h6{
   align-items: center;
   z-index:900;
   transition: background 1s ease;
+  opacity: 0;
 }
 
 .scroll-up:hover{

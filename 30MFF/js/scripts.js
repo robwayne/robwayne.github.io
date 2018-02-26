@@ -115,4 +115,21 @@ $(document).ready(function(){
     $("#sara").css({"visibility": "hidden"});
   });
 
+
+  $(window).scroll(function(){
+    var headerOffset = $(".header-bar").offset().top,
+        offsetThreshold = -(windowHeight*0.08);
+
+    var reviewSampleOffset = reviewSample.offset().top - offsetThreshold;
+
+    if( headerOffset >= reviewSampleOffset){
+      $(".header-bar").css({"background":"#fff","color":"black"});
+      $(".scroll-up").fadeIn();
+    }else{
+        $(".header-bar").css({"background":"none","color":"#fff"});
+        $(".scroll-up").fadeOut();
+    }
+  });
+
+
 });

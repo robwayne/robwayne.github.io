@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <!-- IMPORTED RESOURCES -->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato:300i,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+
+    <!-- IMPORTED RESOURCES -->
+    <link rel="stylesheet" type="text/css" href="css/mawbutton.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+
+  <body>
+    <!-- <audio autoplay id="background-audio" onloadeddata="lowerVolume()">
+      <source src="assets/background-audio.mp3" type="audio/mpeg">
+    </audio> -->
+
+    <div class="full-video-container">
+      <button class="close">Close</button>
+      <video controls class="full-video" id="full-video">
+        <source src="assets/closure.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="header-section" id="home">
+      <div class="header-bar">
+        <div class="title">closure</div>
+        <div class="header-links">
+          <a href="#home" class="hvr-underline-from-left">WATCH</a>
+          <a href="#cast" class="hvr-underline-from-left">CAST</a>
+          <a href="#reviews" class="hvr-underline-from-left">REVIEWS</a>
+        </div>
+      </div>
+      <div class="header-video">
+        <div class="video-overlay"></div>
+        <video muted autoplay loop class="video-background" poster="assets/closure-poster.png">
+          <source src="assets/closure-thumbnail.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="title-container">
+        <h1 class="title banner">closure</h1>
+        <h4 class="slogan" id="slogan"></h4>
+        <button class="play-btn hvr-wobble-horizontal" id="play-btn"><i class="fas fa-play"></i></button>
+      </div>
+      <div class="scroll-down"><i class="fas fa-angle-down"></i></div>
+    </div>
+    <div class="reviews-sample-section">
+      <div class="review">
+        <div class="review-img"><img src="assets/nytimes.png" alt="review image"></div>
+        <div class="review-content">
+          <p>The best film of 2018 - <strong> New York Times</strong></p>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-img"><img src="assets/gleaner.png" alt="review image"></div>
+        <div class="review-content">
+          <p>A true example of Jamaican creativity - <strong> Gleaner</strong></p>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-img"><img src="assets/imdb.png" alt="review image"></div>
+        <div class="review-content">
+          <p>10.0. Tragic yet heart warming film - <strong>IMDB</strong></p>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-img"><img src="assets/netflix.png" alt="review image"></div>
+        <div class="review-content">
+          <p>We have to buy the rights to this film! - <strong> Netflix</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="content" id="content">
+      <div class="cast" id="cast">
+        <h6>Who are we?</h6>
+        <div class="crew-container">
+          <div class="crew">
+            <div class="crew-inner" id="first-crew">
+              <div class="crew-img">
+                <img src="assets/gaby.jpg" alt="">
+              </div>
+              <div class="crew-info" id="gaby">
+                <p class="crew-name">Gaby Flores</p>
+                <p class="title">Director</p>
+              </div>
+            </div>
+          </div>
+          <div class="crew">
+            <div class="crew-inner" id="second-crew">
+              <div class="crew-img">
+                <img src="assets/hatim.jpg" alt="">
+              </div>
+              <div class="crew-info" id="hatim">
+                <p class="crew-name">Hatim Benhsain</p>
+                <p class="title">Script Writer</p>
+              </div>
+            </div>
+          </div>
+          <div class="crew">
+            <div class="crew-inner" id="third-crew">
+              <div class="crew-img">
+                <img src="assets/robert.jpg" alt="">
+              </div>
+              <div class="crew-info" id="robert">
+                <p class="crew-name">Robert Gordon</p>
+                <p class="title">Lead Actor</p>
+              </div>
+            </div>
+          </div>
+          <div class="crew">
+            <div class="crew-inner" id="last-crew">
+              <div class="crew-img">
+                <img src="assets/sara.jpg" alt="">
+              </div>
+              <div class="crew-info" id="sara">
+                <p class="crew-name">Sara Fakhry</p>
+                <p class="title">Lead Actress</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-main-section" id="reviews">
+        <h6>Raving Reviews</h6>
+        <div class="reviews-container">
+
+          <div class="review-item">
+            <div class="review-pic">
+              <a href="https://www.nytimes.com/" target="_blank">
+                <img src="assets/nytimes-large.png" alt="nytimes-large">
+              </a>
+            </div>
+            <div class="comment">
+              <p>"The absolutely best film of 2018, maybe of the 2000s"</p>
+              <p class="author">The New York Times</p>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <div class="review-pic">
+              <a href="https://www.primevideo.com/" target="_blank">
+                  <img src="assets/amazon-large.png" alt="amazon-large">
+              </a>
+            </div>
+            <div class="comment">
+              <p>"We cannot allow another platform like Netflix to have this before we do!"</p>
+              <p class="author">Amazon Prime Video</p>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <div class="review-pic">
+              <a href="http://jamaica-gleaner.com/" target="_blank">
+                <img src="assets/gleaner-large.jpg" alt="gleaner-large">
+              </a>
+            </div>
+            <div class="comment">
+              <p>"A true example of Jamaican creativity and artistic talent"</p>
+              <p class="author">The Gleaner Jamaica</p>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <div class="review-pic">
+              <a href="https://www.netflix.com/" target="_blank">
+                <img src="assets/netflix-large.png" alt="netflix-large">
+              </a>
+            </div>
+            <div class="comment">
+              <p>"Incredible! We have to buy the rights for this film!"</p>
+              <p class="author">Netflix</p>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <div class="review-pic">
+              <a href="http://time.com/" target="_blank">
+                <img src="assets/time-large.png" alt="time-large">
+              </a>
+            </div>
+            <div class="comment">
+              <p>"Incredible visuals"</p>
+              <p class="author">Time Magazine</p>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <div class="review-pic">
+              <a href="https://www.imdb.com/" target="_blank">
+                <img src="assets/imdb-large.png" alt="imdb-large">
+              </a>
+            </div>
+            <div class="comment">
+              <p>"First 10/10 movie for this year. 10.0 Tragic yet heart warming film"</p>
+              <p class="author">IMDb</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-up">
+        <i class="fas fa-angle-double-up"></i>
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <div class="footer-section">
+      <p>&COPY; Robert Gordon 2018</p>
+      <p>NYUAD Interactive Media 2018</p>
+    </div>
+
+    <!-- IMPORTED SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="js/mawbutton.js"></script>
+    <!-- IMPORTED SCRIPTS -->
+    <script src="js/scripts.js"></script>
+
+  </body>
+</html>
