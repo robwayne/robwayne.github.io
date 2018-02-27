@@ -1,0 +1,98 @@
+*{
+  padding:0;
+  margin:0;
+}
+
+body,html{
+  height: 100%;
+  width: 100%;
+}
+
+.background{
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height:100%;
+}
+
+.img-section{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.img img, .overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  right:0;
+}
+
+.img img{
+  z-index: -50;
+}
+
+.overlay{
+  background: rgba(0,0,0,0.5);
+  z-index: -10;
+}
+
+.header{
+  width:100%;
+  height:100px;
+  color:white;
+  position: fixed;
+  top:0;
+  right:0;
+  left:0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.links{
+  width:250px;
+  margin:0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-family:'Josefin Sans',sans-serif;
+  font-size: 1.5em;
+}
+
+.links a{
+  text-decoration: none;
+  color:inherit;
+  width: 50%;
+  text-align: center;
+}
+
+.content{
+  width:100%;
+  height: 100%;
+  display: flex;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+}
+
+.playbutton{
+  position:absolute;
+  top:49%;
+  left:50.5%;
+  right:49.5%;
+  bottom:51%;
+  width:50px;
+  height:50px;
+  border:none;
+  outline: none;
+  border-radius: 50%;
+  text-align: center;
+  color:#000;
+  font-size:1.4em;
+  padding-left:3px;
+  padding-top:3px;
+}
