@@ -14,41 +14,46 @@ setup = () => {
   let canvas = createCanvas(windowWidth, windowHeight);
   let yPos = windowHeight*0.2;//center the canvas in the middle of the page
   canvas.position(0,0);
-  fft = new p5.FFT(0.9,4096);
+  fft = new p5.FFT(0.9,1024);
   let soundSpectrum = fft.analyze();
-  w = width/soundSpectrum.length;
-  sound.amp(6);
+  w = width/(soundSpectrum.length-2);
+  sound.amp(3);
 }
 
-let waveform;
+let waveform,y2,green;
 draw = () => {
 
   background(img);
-  // soundSpectrum = fft.analyze();
-  // for (let i = 0; i < soundSpectrum.length; i++){
-  //   y = map(soundSpectrum[i], 0,256, height,0);
-  //   x = map(i,0,soundSpectrum.length, 0,width);
-  //   noStroke();
-  //   fill(200,200,i);
-  //   rect(x,y,w-8,height-y);
-  // }
-  //
+  soundSpectrum = fft.analyze();
+  for (let i = 0; i < soundSpectrum.length; i++){
+    y = map(soundSpectrum[i], 0,256, height/2,0);
+    y2 = map(soundSpectrum[i],0,256,0,height/2);
+    x = map(i,0,soundSpectrum.length, 0,width);
+    green = map(i,0, soundSpectrum.length, 0,127);
+    noStroke();
+    fill(255,green,255);
+    rect(x,y,w-2,(height/2)-y);
+    stroke(255);
+    noStroke();
+    rect(x,height/2, w-2,(height/2)-y);
+  }
+
   waveform = fft.waveform();
   noFill();
   beginShape();
-  stroke(255);
   strokeWeight(1);
-
   for(let i = 0; i<waveform.length;i++){
     x = map(i,0,waveform.length,0,width);
     y = map(waveform[i],-1,1,0,height);
+    stroke(255);
+
     vertex(x,y);
   }
   endShape();
 
-  sound.onended(() => {
-    $("#playbutton").html('<i class="fas fa-redo"></i>');
-  });
+  // sound.onended(() => {
+  //   $("#playbutton").html('<i class="fas fa-redo"></i>');
+  // });
 }
 //---------------------P5 CODE----------------------
 
