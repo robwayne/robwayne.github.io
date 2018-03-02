@@ -9,9 +9,8 @@ preload = () => {
   img = loadImage("assets/nyuad-bg.jpg");
 }
 
-let fft,y, w,x; //create all globabl variables
+let fft,y, w,x, nextButton; //create all globabl variables
 setup = () => {
-
   fft = new p5.FFT(0.9,512); // create a new p5.FFT object to analyze the audio data - apply smoothing and create 1024 bins
 
   //Declare all the necessary variables for the skecth to create the wavy pattern.
@@ -19,8 +18,27 @@ setup = () => {
   //declare all the canvas and sketch related elements
   let canvas = createCanvas(windowWidth, windowHeight);
   let overlayDiv =  createDiv(""), headerDiv =  createDiv(""), linksDiv = createDiv("");
+  let descriptionDiv = createDiv(""), descriptionP = createP('Press <span style="color:#f4cd30"> PLAY </span> | <span style="color:#f4cd30"> [SPACEBAR] </span> to be re-immersed in our home away from home, our <span style="font-style:italic;color:#f4cd30">40 Acres</span> of Saadiyat bubble.');
+  //let contentDiv = createDiv(""), playButton = createButton('<i class="fas fa-play"></i>');
   let immersiveLink = createA('/','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
   let titleDiv = createP("forty acres");
+  nextButton = createButton('<i class="fas fa-arrow-right"></i>');
+
+  nextButton.class("playbutton");
+  nextButton.id("next-button");
+  nextButton.position(width-80, (height/2)-24);
+  nextButton.hide();
+
+  descriptionDiv.class("description");
+  descriptionDiv.id("description");
+  descriptionP.parent("description");
+
+  // contentDiv.class("content");
+  // contentDiv.id("content");
+  // playButton.class("playbutton");
+  // playButton.id("playbutton");
+  // playButton.parent("content");
+  // playButton.mousePressed(playAudio);
 
   titleDiv.class("title");
   overlayDiv.class("overlay");
@@ -84,7 +102,9 @@ draw = () => {
   currentTime = sound.currentTime();
   if(currentTime >= audioLength-0.2){
     $("#playbutton").html('<i class="fas fa-redo"></i>');
+    nextButton.show();
   }
+  
   if (sound.isPlaying()){
     $("#description").fadeOut(500);
   }else{
@@ -103,17 +123,21 @@ function keyPressed() {
 
 
 //---------------------JQUERY CODE----------------------
-playAudio = () => {
-  if (sound.isPlaying()){
-    sound.pause();
-    $("#playbutton").html('<i class="fas fa-play"></i>');
-  }else{
-    sound.play();
-    $("#playbutton").html('<i class="fas fa-pause"></i>');
+$(document).ready(() =>{
+  playAudio = () => {
+    if (sound.isPlaying()){
+      sound.pause();
+      $("#playbutton").html('<i class="fas fa-play"></i>');
+    }else{
+      sound.play();
+      $("#playbutton").html('<i class="fas fa-pause"></i>');
+    }
   }
-}
 
-$("#playbutton").click(() =>{
-  playAudio();
+  $(".playbutton").click(()=>{
+    playAudio();
+  });
 });
+
+
 //---------------------JQUERY CODE----------------------
