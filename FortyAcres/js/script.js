@@ -16,9 +16,15 @@ setup = () => {
   fft = new p5.FFT(0.9,512); // create a new p5.FFT object to analyze the audio data - apply smoothing and create 1024 bins
 
   //Declare all the necessary variables for the skecth to create the wavy pattern.
+  let soundSpectrum = [];
+  //declare all the canvas and sketch related elements
   let canvas = createCanvas(windowWidth, windowHeight);
-  let soundSpectrum = fft.analyze();
-  let overlayDiv = createDiv(""), headerDiv = createDiv(""), linksDiv = createDiv("");
+  let overlayDiv =  createDiv(""), headerDiv =  createDiv(""), linksDiv = createDiv("");
+  let immersiveLink = createA('#','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
+  let titleDiv = createP("forty acres");
+
+  titleDiv.class("title");
+
   overlayDiv.class("overlay");
   headerDiv.class("header");
   headerDiv.id("header");
@@ -26,11 +32,11 @@ setup = () => {
   linksDiv.id("links");
   linksDiv.parent("header");
 
-
-  let immersiveLink = createA('#','Immersive'), interactiveLink = createA('#','Interactive');
   immersiveLink.parent("links");
+  immersiveLink.addClass("active");
   interactiveLink.parent("links");
 
+  soundSpectrum = fft.analyze();
   sound.amp(3); //set the amplitude of the audio to 300% so that we can get enough data from the waveform to make the wave pattern
   w = width/(soundSpectrum.length-2); // this will be used for the width of each rect used to create the equalizer effect
   canvas.position(0,0); //position the canvas at 0,0 on the dom using p5.dom
@@ -43,21 +49,20 @@ let played = false;
 let audioLength;
 draw = () => {
 
-  audioLength = sound.duration()
+  audioLength = sound.duration();
 
   background(img);
   soundSpectrum = fft.analyze();
   for (let i = 0; i < soundSpectrum.length; i++){
     y = map(soundSpectrum[i], 0,256, height/2,0);
-    y2 = map(soundSpectrum[i],0,256,0,height/2);
     x = map(i,0,soundSpectrum.length, 0,width/2);
-    x2 = x;
-    green = map(i,0, soundSpectrum.length, 0,127);
+    green = map(i,0, soundSpectrum.length,5,10);
     noStroke();
     fill(255,green,255);
     rect((width/2)-x,y,w-2,(height/2)-y);
     stroke(255);
     noStroke();
+    fill(255,green,255);
     rect((width/2)-x,height/2, w-2,(height/2)-y);
 
     noStroke();
@@ -65,6 +70,7 @@ draw = () => {
     rect(x+(width/2),y,w-2,(height/2)-y);
     stroke(255);
     noStroke();
+    fill(255,green,255);
     rect(x+(width/2),height/2, w-2,(height/2)-y);
 
   }
@@ -82,8 +88,9 @@ draw = () => {
   }
   endShape();
 
+  //if the audio has been played fully, change the button icon to a replay icon
   currentTime = sound.currentTime();
-  if(currentTime >= audioLength-1){
+  if(currentTime >= audioLength-0.2){
     $("#playbutton").html('<i class="fas fa-redo"></i>');
   }
 }
@@ -112,11 +119,4 @@ playAudio = () => {
 $("#playbutton").click(() =>{
   playAudio();
 });
-
-$("a").click((e) => {
-  e.preventDefault;
-  console.log("a clicked");
-});
-
-
 //---------------------JQUERY CODE----------------------
