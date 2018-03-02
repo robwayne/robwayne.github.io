@@ -66,6 +66,11 @@ body,html{
   display: flex;
   align-items: center;
   justify-content: center;
+
+}
+
+.links a:hover {
+  color: #f4cd30;
 }
 
 .playbutton{
@@ -90,4 +95,26 @@ canvas {
   font-family: 'Conture',cursive;
   color:#fff;
   text-align: center;
+}
+
+.description{
+  position: absolute;
+  bottom:30%;
+  top: 70%;
+  left:10%;
+  right: 10%;
+  width:80%;
+  height:80px;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:0 10px;
+  border-radius: 10px;
+}
+
+.description p{
+  color:#fff;
+  font-family: 'Montserrat',sans-serif;
+  font-size:1.2em;
 }
