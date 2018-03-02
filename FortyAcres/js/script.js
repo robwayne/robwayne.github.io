@@ -19,7 +19,7 @@ setup = () => {
   //declare all the canvas and sketch related elements
   let canvas = createCanvas(windowWidth, windowHeight);
   let overlayDiv =  createDiv(""), headerDiv =  createDiv(""), linksDiv = createDiv("");
-  let immersiveLink = createA('#','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
+  let immersiveLink = createA('/','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
   let titleDiv = createP("forty acres");
 
   titleDiv.class("title");
@@ -31,7 +31,7 @@ setup = () => {
   linksDiv.parent("header");
 
   immersiveLink.parent("links");
-  immersiveLink.addClass("active");
+  immersiveLink.class("active");
   interactiveLink.parent("links");
 
   soundSpectrum = fft.analyze();

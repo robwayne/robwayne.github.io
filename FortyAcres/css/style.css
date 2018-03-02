@@ -69,7 +69,7 @@ body,html{
 
 }
 
-.links a:hover {
+.links a:hover,a.active{
   color: #f4cd30;
 }
 
