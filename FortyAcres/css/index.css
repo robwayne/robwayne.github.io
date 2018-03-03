@@ -120,10 +120,12 @@ canvas {
 
 #next-button{
   animation: bounceRight 2s infinite;
+  transition: all .4s ease;
 }
 
 #next-button:hover{
   background: #f4cd30;
+  color:#fff;
   cursor: pointer;
 }
 

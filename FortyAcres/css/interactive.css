@@ -1,0 +1,21 @@
+#interactive-overlay{
+  background: linear-gradient(rgba(50, 30, 134,0.5),rgba(0,0,0,0.2));
+  /* background: none; */
+}
+
+.location{
+  width:276px;
+  height:191px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img{
+  display: block;
+  max-width: 256px;
+  max-height: 171px;
+  width: auto;
+  height: auto;
+}

@@ -18,7 +18,9 @@ setup = () => {
   //declare all the canvas and sketch related elements
   let canvas = createCanvas(windowWidth, windowHeight);
   let overlayDiv =  createDiv(""), headerDiv =  createDiv(""), linksDiv = createDiv("");
-  let descriptionDiv = createDiv(""), descriptionP = createP('Press <span style="color:#f4cd30"> PLAY </span> | <span style="color:#f4cd30"> [SPACEBAR] </span> to be re-immersed in our home away from home, our <span style="font-style:italic;color:#f4cd30">40 Acres</span> of Saadiyat bubble.');
+  let descriptionDiv = createDiv("");
+  let descriptionP = createP('Press <span style="color:#f4cd30"> PLAY </span> | <span style="color:#f4cd30"> [SPACEBAR] </span> to be re-immersed in your home away from home,\
+    your <span style="font-style:italic;color:#f4cd30;font-weight:700">40 Acres</span> of Saadiyat bubble.');
   //let contentDiv = createDiv(""), playButton = createButton('<i class="fas fa-play"></i>');
   let immersiveLink = createA('/','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
   let titleDiv = createP("forty acres");
@@ -28,17 +30,14 @@ setup = () => {
   nextButton.id("next-button");
   nextButton.position(width-80, (height/2)-24);
   nextButton.hide();
+  nextButton.mouseClicked(() => {
+    window.location.href = "/interactive.html"
+  });
 
   descriptionDiv.class("description");
   descriptionDiv.id("description");
   descriptionP.parent("description");
 
-  // contentDiv.class("content");
-  // contentDiv.id("content");
-  // playButton.class("playbutton");
-  // playButton.id("playbutton");
-  // playButton.parent("content");
-  // playButton.mousePressed(playAudio);
 
   titleDiv.class("title");
   overlayDiv.class("overlay");
@@ -56,8 +55,6 @@ setup = () => {
   sound.amp(3); //set the amplitude of the audio to 300% so that we can get enough data from the waveform to make the wave pattern
   w = width/(soundSpectrum.length-2); // this will be used for the width of each rect used to create the equalizer effect
   canvas.position(0,0); //position the canvas at 0,0 on the dom using p5.dom
-
-
 }
 
 let waveform,y2,green, currentTime = 0,x2;
@@ -90,10 +87,9 @@ draw = () => {
   beginShape();
   strokeWeight(1);
   for(let i = 0; i<waveform.length;i++){
-    x = map(i,0,waveform.length,0,width);
+    x = map(i,0,waveform.length-1,0,width);
     y = map(waveform[i],-1,1,0,height);
     stroke(255);
-
     vertex(x,y);
   }
   endShape();
@@ -104,7 +100,7 @@ draw = () => {
     $("#playbutton").html('<i class="fas fa-redo"></i>');
     nextButton.show();
   }
-  
+
   if (sound.isPlaying()){
     $("#description").fadeOut(500);
   }else{
