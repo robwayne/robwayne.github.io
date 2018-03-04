@@ -2,6 +2,9 @@
 let libraryAudio = new p5.SoundFile();
 let highlineAudio = new p5.SoundFile();
 let palmTreesAudio = new p5.SoundFile();
+let barahaAudio = new p5.SoundFile();
+let d2Audio = new p5.SoundFile();
+let libCafeAudio = new p5.SoundFile();
 let currentAudio = new p5.SoundFile();
 
 preload = () => {
@@ -11,6 +14,9 @@ preload = () => {
   libraryAudio = loadSound("assets/audio/library.mp3");
   highlineAudio = loadSound("assets/audio/highline.mp3");
   palmTreesAudio = loadSound("assets/audio/palm-trees.mp3");
+  libCafeAudio = loadSound("assets/audio/lib-cafe.mp3");
+  d2Audio = loadSound("assets/audio/d2.mp3");
+  barahaAudio = loadSound("assets/audio/baraha.mp3");
 }
 
 let fft,w,spectrum,waveform, x,x2, y;
@@ -19,36 +25,62 @@ setup = () => {
   let overlayDiv =  createDiv(""), headerDiv =  createDiv(""), linksDiv = createDiv("");
   let immersiveLink = createA('/','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
   let titleDiv = createP("forty acres");
-  let libraryDiv = createDiv('<img src="assets/nyuad-bg.jpg"/>');
-  let highlineDiv = createDiv('<img src="assets/nyuad-bg.jpg"/>');
-  let palmTreesDiv = createDiv('<img src="assets/palm-bg.jpg"/>');
-  let playButton = createButton('<i class="fas fa-play"></i>');
+  let libraryDiv = createDiv('<img src="assets/library.jpg"/>');
+  let highlineDiv = createDiv('<img src="assets/highline.jpg"/>');
+  let palmTreesDiv = createDiv('<img src="assets/palm-trees2.jpg"/>');
+
+  let libCafeDiv = createDiv('<img src="assets/lib-cafe.jpg"/>');
+  let d2Div = createDiv('<img src="assets/d2.jpg"/>');
+  let barahaDiv = createDiv('<img src="assets/baraha.jpg"/>');
+  let audioTitleDiv = createDiv("<p>Audio Name</p>");
+  audioTitleDiv.class("audio-title");
+
+  //let playButton = createButton('<i class="fas fa-play"></i>');
 
   libraryDiv.class("location");
   libraryDiv.id("library");
-  libraryDiv.position(width*0.09,(height/2)-($('#library').height()/2));
+  libraryDiv.position(width*0.09,(height/2)-($('#library').height()*1.2));
   libraryDiv.mouseClicked(()=>{
     playAudio(libraryAudio);
   });
 
-  playButton.parent("library");
-
-
   highlineDiv.class("location");
   highlineDiv.id("highline");
-  highlineDiv.position(width*0.39,(height/2)-($('#highline').height()/2));
+  highlineDiv.position(width*0.42,(height/2)-($('#highline').height()*1.2));
   highlineDiv.mouseClicked(()=>{
     playAudio(highlineAudio);
   });
 
   palmTreesDiv.class("location");
   palmTreesDiv.id("palmTrees");
-  palmTreesDiv.position(width*0.69,(height/2)-($('#library').height()/2));
+  palmTreesDiv.position(width*0.72,(height/2)-($('#palmTrees').height()*1.2));
   palmTreesDiv.mouseClicked(() => {
     playAudio(palmTreesAudio);
   });
 
+  libCafeDiv.class("location");
+  libCafeDiv.id("lib-cafe");
+  libCafeDiv.position(width*0.09,(height/2)+($('#lib-cafe').height()*0.05));
+  libCafeDiv.mouseClicked(()=>{
+    playAudio(libCafeAudio);
+  });
+
+  d2Div.class("location");
+  d2Div.id("d2");
+  d2Div.position(width*0.42,(height/2)+($('#d2').height()*0.05));
+  d2Div.mouseClicked(()=>{
+    playAudio(d2Audio);
+  });
+
+  barahaDiv.class("location");
+  barahaDiv.id("baraha");
+  barahaDiv.position(width*0.72,(height/2)+($('#baraha').height()*0.05));
+  barahaDiv.mouseClicked(() => {
+    playAudio(barahaAudio);
+  });
+
   titleDiv.class("title");
+  titleDiv.id("interactive-title");
 
   //create the layout of the page
   overlayDiv.class("overlay");
@@ -80,8 +112,8 @@ draw = () => {
   spectrum = fft.analyze();
   for(let i = 0; i < spectrum.length; i++){
     x = map(i,0,spectrum.length,0,width/2);
-    x2 = map(i,0,spectrum.length-1,width/2,width*0.915);
-    y = map(spectrum[i],0,256,0,height*0.15);
+    x2 = map(i,0,spectrum.length-1,width/2,width*0.9);
+    y = map(spectrum[i],0,256,0,height*0.05);
     noStroke();
     fill(255,255,255);
     rect((width/2)-x,(height*0.8)-y,w-2,y);
@@ -96,8 +128,8 @@ draw = () => {
   waveform = fft.waveform();
   beginShape();
   strokeWeight(1);
-  for (let i = 0; i< waveform.length; i++){
-    x = map(i,0,waveform.length-1,width*0.09,(width)*0.915);
+  for (let i = 0; i < waveform.length; i++){
+    x = map(i,0,waveform.length-1,width*0.09,(width)*0.84);
     y = map(waveform[i],-1,1,height*0.6,height);
     stroke(255);
     vertex(x,y);

@@ -4,22 +4,35 @@
 }
 
 .location{
-  width:276px;
-  height:191px;
-  background: #fff;
+  width:190px;
+  height:130px;
+  background: rgba(124,111,178,0.6);
   display: flex;
   justify-content: center;
   align-items: center;
+  border:1px solid rgba(255,255,255,0.7);
 }
 
 .location:hover{
-  cursor:
+  cursor:pointer;
 }
 
 img{
   display: block;
-  max-width: 256px;
-  max-height: 171px;
+  max-width: 180px;
+  max-height: 120px;
   width: auto;
   height: auto;
+  border:1px solid rgba(255,255,255,0.7);
+}
+
+#interactive-title{
+  font-size: 10em;
+}
+
+.audio-title{
+  width:100px;
+  height:40px;
+  border-radius:5px;
+  background: 
 }
