@@ -27,7 +27,7 @@ setup = () => {
 
   let canvas = createCanvas(windowWidth, windowHeight);
   let overlayDiv =  createDiv(""), headerDiv =  createDiv(""), linksDiv = createDiv("");
-  let immersiveLink = createA('/','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
+  let immersiveLink = createA('/FortyAcres/','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
   let titleDiv = createP("forty acres");
   let libraryDiv = createDiv('<img src="assets/library.jpg"/>');
   let highlineDiv = createDiv('<img src="assets/highline.jpg"/>');
