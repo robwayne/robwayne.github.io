@@ -27,7 +27,7 @@ setup = () => {
 
   let canvas = createCanvas(windowWidth, windowHeight);
   let overlayDiv =  createDiv(""), headerDiv =  createDiv(""), linksDiv = createDiv("");
-  let immersiveLink = createA('/FortyAcres/','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
+  let immersiveLink = createA('/FortyAcres/index.html','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
   let titleDiv = createP("forty acres");
   let libraryDiv = createDiv('<img src="assets/library.jpg"/>');
   let highlineDiv = createDiv('<img src="assets/highline.jpg"/>');
@@ -39,6 +39,14 @@ setup = () => {
   audioTitleDiv = createDiv("");
   let audioTitleP = createP("");
   let playButton = createButton('<i class="fas fa-play"></i>');
+  instructionsDiv = createDiv("");
+  let instructionsP = createP("Missing just that small part of home? <span style='color:#f4cd30'>CLICK</span> the images to hear and feel the atmosphere of those iconic locations.");
+
+  instructionsDiv.class("instructions");
+  instructionsDiv.id("instructions");
+  instructionsP.parent("instructions");
+  instructionsDiv.position(0,height*0.85);
+  instructionsDiv.center('horizontal');
 
   audioTitleDiv.class("audio-title");
   audioTitleDiv.id("audio-title");
@@ -55,7 +63,7 @@ setup = () => {
 
   libraryDiv.class("location");
   libraryDiv.id("library");
-  libraryDiv.position(width*0.09,(height/2)-($('#library').height()*1.2));
+  libraryDiv.position(width*0.12,(height/2)-($('#library').height()*1.2));
   libraryDiv.mouseClicked(()=>{
     audioTitleP.html("Library");
     playAudio(libraryAudio);
@@ -71,7 +79,7 @@ setup = () => {
 
   palmTreesDiv.class("location");
   palmTreesDiv.id("palmTrees");
-  palmTreesDiv.position(width*0.72,(height/2)-($('#palmTrees').height()*1.2));
+  palmTreesDiv.position(width*0.74,(height/2)-($('#palmTrees').height()*1.2));
   palmTreesDiv.mouseClicked(() => {
     audioTitleP.html("Palm Trees");
     playAudio(palmTreesAudio);
@@ -79,7 +87,7 @@ setup = () => {
 
   libCafeDiv.class("location");
   libCafeDiv.id("lib-cafe");
-  libCafeDiv.position(width*0.09,(height/2)+($('#lib-cafe').height()*0.05));
+  libCafeDiv.position(width*0.12,(height/2)+($('#lib-cafe').height()*0.05));
   libCafeDiv.mouseClicked(()=>{
     audioTitleP.html("Library Café");
     playAudio(libCafeAudio);
@@ -95,7 +103,7 @@ setup = () => {
 
   barahaDiv.class("location");
   barahaDiv.id("baraha");
-  barahaDiv.position(width*0.72,(height/2)+($('#baraha').height()*0.05));
+  barahaDiv.position(width*0.74,(height/2)+($('#baraha').height()*0.05));
   barahaDiv.mouseClicked(() => {
     audioTitleP.html("Baraha");
     playAudio(barahaAudio);
@@ -135,8 +143,8 @@ draw = () => {
 
   spectrum = fft.analyze();
   for(let i = 0; i < spectrum.length; i++){
-    x = map(i,0,spectrum.length,0,width/2);
-    x2 = map(i,0,spectrum.length-1,width/2,width*0.87);
+    x = map(i,0,spectrum.length-1,0,width/2);
+    x2 = map(i,0,spectrum.length-1,width/2,width*0.89);
     y = map(spectrum[i],0,256,0,height*0.05);
     noStroke();
     fill(255,255,255);
@@ -153,7 +161,7 @@ draw = () => {
   beginShape();
   strokeWeight(1);
   for (let i = 0; i < waveform.length; i++){
-    x = map(i,0,waveform.length-1,width*0.09,(width)*0.87);
+    x = map(i,0,waveform.length-1,width*0.12,(width)*0.89);
     y = map(waveform[i],-1,1,height*0.6,height);
     stroke(255);
     vertex(x,y);
@@ -162,6 +170,7 @@ draw = () => {
 
   if (currentAudio.isPlaying()){
     $("#audio-title").fadeIn(500);
+    $("#instructions").fadeOut(450);
   }
 
 }

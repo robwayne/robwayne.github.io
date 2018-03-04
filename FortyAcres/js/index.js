@@ -19,9 +19,8 @@ setup = () => {
   let canvas = createCanvas(windowWidth, windowHeight);
   let overlayDiv =  createDiv(""), headerDiv =  createDiv(""), linksDiv = createDiv("");
   let descriptionDiv = createDiv("");
-  let descriptionP = createP('Press <span style="color:#f4cd30"> PLAY </span> | <span style="color:#f4cd30"> [SPACEBAR] </span> to be re-immersed in your home away from home,\
+  let descriptionP = createP('Press <span style="color:#f4cd30"> PLAY </span> | <span style="color:#f4cd30"> [SPACEBAR] </span> to be immersed in your home away from home,\
     your <span style="font-style:italic;color:#f4cd30;font-weight:700">40 Acres</span> of Saadiyat bubble.');
-  //let contentDiv = createDiv(""), playButton = createButton('<i class="fas fa-play"></i>');
   let immersiveLink = createA('/','Immersive'), interactiveLink = createA('/FortyAcres/interactive.html','Interactive');
   let titleDiv = createP("forty acres");
   nextButton = createButton('<i class="fas fa-arrow-right"></i>');
@@ -37,6 +36,7 @@ setup = () => {
   descriptionDiv.class("description");
   descriptionDiv.id("description");
   descriptionP.parent("description");
+  descriptionP.id("descriptionP");
 
 
   titleDiv.class("title");
@@ -95,10 +95,11 @@ draw = () => {
 
   //if the audio has been played fully, change the button icon to a replay icon
   currentTime = sound.currentTime();
-  console.log(currentTime);
   if(currentTime >= audioLength-0.2){
     $("#playbutton").html('<i class="fas fa-redo"></i>');
     nextButton.show();
+    $("#descriptionP").html('Press <span style="color:#f4cd30"> PLAY </span> | <span style="color:#f4cd30"> [SPACEBAR] </span> to be re-immersed in your home away from home,\
+      your <span style="font-style:italic;color:#f4cd30;font-weight:700">40 Acres</span> of Saadiyat bubble.');
   }
 
   if (sound.isPlaying()){

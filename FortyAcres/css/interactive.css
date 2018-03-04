@@ -40,6 +40,16 @@ img{
   align-items: center;
 }
 
+.instructions{
+  width:80%;
+  height:60px;
+  border-radius: 5px;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .audio-title p{
   color:#f4cd30;
   font-family:'Montserrat',sans-serif;
@@ -61,4 +71,10 @@ img{
 
 .audio-button:hover{
   cursor:pointer;
+}
+
+.instructions p{
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  font-size:1.2em;
 }
