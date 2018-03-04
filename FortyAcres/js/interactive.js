@@ -131,7 +131,7 @@ setup = () => {
   w = (((width/2)*0.915) - width*0.09)/(spectrum.length-4);
 
   libraryAudio.amp(3);
-  highlineAudio.amp(1.5);
+  highlineAudio.amp(1);
   palmTreesAudio.amp(1.5);
 
   $("#audio-title").hide();
@@ -170,7 +170,9 @@ draw = () => {
 
   if (currentAudio.isPlaying()){
     $("#audio-title").fadeIn(500);
-    $("#instructions").fadeOut(450);
+    $("#instructions").fadeOut(400);
+  }else{
+    $("#audio-button").html('<i class="fas fa-play"></i>');
   }
 
 }
