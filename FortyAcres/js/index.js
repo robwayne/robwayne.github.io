@@ -30,7 +30,7 @@ setup = () => {
   nextButton.position(width-80, (height/2)-24);
   nextButton.hide();
   nextButton.mouseClicked(() => {
-    window.location.href = "/interactive.html"
+    window.location.href = "/FortyAcres/interactive.html"
   });
 
   descriptionDiv.class("description");
