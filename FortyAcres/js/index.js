@@ -5,7 +5,7 @@
 //preload the audio clip to be played and used in
 let sound = new p5.SoundFile();
 preload = () => {
-  sound = loadSound("assets/audio/baraha.wav");
+  sound = loadSound("assets/audio/immersive.mp3");
   img = loadImage("assets/nyuad-bg.jpg");
 }
 
@@ -52,7 +52,7 @@ setup = () => {
   interactiveLink.parent("links");
 
   soundSpectrum = fft.analyze();
-  sound.amp(3); //set the amplitude of the audio to 300% so that we can get enough data from the waveform to make the wave pattern
+  sound.amp(0.6); //set the amplitude of the audio to 300% so that we can get enough data from the waveform to make the wave pattern
   w = width/(soundSpectrum.length-2); // this will be used for the width of each rect used to create the equalizer effect
   canvas.position(0,0); //position the canvas at 0,0 on the dom using p5.dom
 }

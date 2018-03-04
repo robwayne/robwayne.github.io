@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.location:hover{
+  cursor:
+}
+
 img{
   display: block;
   max-width: 256px;

@@ -1,16 +1,16 @@
 
-let barahaAudio = new p5.SoundFile();
-let gymAudio = new p5.SoundFile();
-let birdsAudio = new p5.SoundFile();
+let libraryAudio = new p5.SoundFile();
+let highlineAudio = new p5.SoundFile();
+let palmTreesAudio = new p5.SoundFile();
 let currentAudio = new p5.SoundFile();
 
 preload = () => {
   bgImg = loadImage("assets/palm-bg.jpg");
 
   //load audio clips
-  barahaAudio = loadSound("assets/audio/baraha.wav");
-  gymAudio = loadSound("assets/audio/gym.wav");
-  birdsAudio = loadSound("assets/audio/birds.wav");
+  libraryAudio = loadSound("assets/audio/library.mp3");
+  highlineAudio = loadSound("assets/audio/highline.mp3");
+  palmTreesAudio = loadSound("assets/audio/palm-trees.mp3");
 }
 
 let fft,w,spectrum,waveform, x,x2, y;
@@ -19,32 +19,33 @@ setup = () => {
   let overlayDiv =  createDiv(""), headerDiv =  createDiv(""), linksDiv = createDiv("");
   let immersiveLink = createA('/','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
   let titleDiv = createP("forty acres");
-  let barahaDiv = createDiv('<img src="assets/nyuad-bg.jpg"/>');
-  let gymDiv = createDiv('<img src="assets/nyuad-bg.jpg"/>');
-  let birdsDiv = createDiv('<img src="assets/palm-bg.jpg"/>');
-
+  let libraryDiv = createDiv('<img src="assets/nyuad-bg.jpg"/>');
+  let highlineDiv = createDiv('<img src="assets/nyuad-bg.jpg"/>');
+  let palmTreesDiv = createDiv('<img src="assets/palm-bg.jpg"/>');
   let playButton = createButton('<i class="fas fa-play"></i>');
 
-  barahaDiv.class("location");
-  barahaDiv.id("baraha");
-  barahaDiv.position(width*0.09,(height/2)-($('#baraha').height()/2));
-  barahaDiv.mouseClicked(()=>{
-    playAudio(barahaAudio);
+  libraryDiv.class("location");
+  libraryDiv.id("library");
+  libraryDiv.position(width*0.09,(height/2)-($('#library').height()/2));
+  libraryDiv.mouseClicked(()=>{
+    playAudio(libraryAudio);
   });
 
+  playButton.parent("library");
 
-  gymDiv.class("location");
-  gymDiv.id("gym");
-  gymDiv.position(width*0.39,(height/2)-($('#gym').height()/2));
-  gymDiv.mouseClicked(()=>{
-    playAudio(gymAudio);
+
+  highlineDiv.class("location");
+  highlineDiv.id("highline");
+  highlineDiv.position(width*0.39,(height/2)-($('#highline').height()/2));
+  highlineDiv.mouseClicked(()=>{
+    playAudio(highlineAudio);
   });
 
-  birdsDiv.class("location");
-  birdsDiv.id("birds");
-  birdsDiv.position(width*0.69,(height/2)-($('#baraha').height()/2));
-  birdsDiv.mouseClicked(() => {
-    playAudio(birdsAudio);
+  palmTreesDiv.class("location");
+  palmTreesDiv.id("palmTrees");
+  palmTreesDiv.position(width*0.69,(height/2)-($('#library').height()/2));
+  palmTreesDiv.mouseClicked(() => {
+    playAudio(palmTreesAudio);
   });
 
   titleDiv.class("title");
@@ -67,9 +68,9 @@ setup = () => {
   spectrum = fft.analyze();
   w = (((width/2)*0.915) - width*0.09)/(spectrum.length-4);
 
-  barahaAudio.amp(3);
-  gymAudio.amp(2);
-  birdsAudio.amp(1.5);
+  libraryAudio.amp(3);
+  highlineAudio.amp(2);
+  palmTreesAudio.amp(1.5);
 }
 
 draw = () => {
@@ -81,7 +82,6 @@ draw = () => {
     x = map(i,0,spectrum.length,0,width/2);
     x2 = map(i,0,spectrum.length-1,width/2,width*0.915);
     y = map(spectrum[i],0,256,0,height*0.15);
-    console.log(x);
     noStroke();
     fill(255,255,255);
     rect((width/2)-x,(height*0.8)-y,w-2,y);
