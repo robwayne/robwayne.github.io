@@ -31,7 +31,7 @@ setup = () => {
   let titleDiv = createP("forty acres");
   let libraryDiv = createDiv('<img src="assets/library.jpg"/>');
   let highlineDiv = createDiv('<img src="assets/highline.jpg"/>');
-  let palmTreesDiv = createDiv('<img src="assets/palm-trees2.jpg"/>');
+  let palmTreesDiv = createDiv('<img src="assets/palm-trees.jpg"/>');
 
   let libCafeDiv = createDiv('<img src="assets/lib-cafe.jpg"/>');
   let d2Div = createDiv('<img src="assets/d2.jpg"/>');

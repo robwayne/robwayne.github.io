@@ -5,7 +5,7 @@
 //preload the audio clip to be played and used in
 let sound = new p5.SoundFile();
 preload = () => {
-  sound = loadSound("assets/audio/immersive2.mp3");
+  sound = loadSound("assets/audio/immersive.mp3");
   img = loadImage("assets/nyuad-bg.jpg");
 }
 
