@@ -5,7 +5,7 @@
 //preload the audio clip to be played and used in
 let sound = new p5.SoundFile();
 preload = () => {
-  sound = loadSound("assets/audio/immersive.mp3");
+  sound = loadSound("assets/audio/immersive2.mp3");
   img = loadImage("assets/nyuad-bg.jpg");
 }
 
@@ -22,7 +22,7 @@ setup = () => {
   let descriptionP = createP('Press <span style="color:#f4cd30"> PLAY </span> | <span style="color:#f4cd30"> [SPACEBAR] </span> to be re-immersed in your home away from home,\
     your <span style="font-style:italic;color:#f4cd30;font-weight:700">40 Acres</span> of Saadiyat bubble.');
   //let contentDiv = createDiv(""), playButton = createButton('<i class="fas fa-play"></i>');
-  let immersiveLink = createA('/','Immersive'), interactiveLink = createA('/interactive.html','Interactive');
+  let immersiveLink = createA('/','Immersive'), interactiveLink = createA('/FortyAcres/interactive.html','Interactive');
   let titleDiv = createP("forty acres");
   nextButton = createButton('<i class="fas fa-arrow-right"></i>');
 
@@ -52,13 +52,12 @@ setup = () => {
   interactiveLink.parent("links");
 
   soundSpectrum = fft.analyze();
-  sound.amp(0.6); //set the amplitude of the audio to 300% so that we can get enough data from the waveform to make the wave pattern
+  sound.amp(0.4); //set the amplitude of the audio to 300% so that we can get enough data from the waveform to make the wave pattern
   w = width/(soundSpectrum.length-2); // this will be used for the width of each rect used to create the equalizer effect
   canvas.position(0,0); //position the canvas at 0,0 on the dom using p5.dom
 }
 
 let waveform,y2,green, currentTime = 0,x2;
-let played = false;
 let audioLength;
 draw = () => {
 
@@ -96,6 +95,7 @@ draw = () => {
 
   //if the audio has been played fully, change the button icon to a replay icon
   currentTime = sound.currentTime();
+  console.log(currentTime);
   if(currentTime >= audioLength-0.2){
     $("#playbutton").html('<i class="fas fa-redo"></i>');
     nextButton.show();
