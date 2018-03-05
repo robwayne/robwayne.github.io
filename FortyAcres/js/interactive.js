@@ -40,7 +40,7 @@ setup = () => {
   let audioTitleP = createP("");
   let playButton = createButton('<i class="fas fa-play"></i>');
   instructionsDiv = createDiv("");
-  let instructionsP = createP("Missing just that small part of home? <span style='color:#f4cd30'>CLICK</span> the images to hear and feel the atmosphere of those iconic locations.");
+  let instructionsP = createP("Missing just that <i>small</i> part of home? <span style='color:#f4cd30'>CLICK</span> the images to hear and feel the atmosphere of those iconic locations.");
 
   instructionsDiv.class("instructions");
   instructionsDiv.id("instructions");
