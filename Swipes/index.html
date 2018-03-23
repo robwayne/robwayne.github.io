@@ -3,37 +3,55 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>ComicStrip</title>
+    <title>Swipes</title>
 
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lato|Poppins" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
   </head>
   <body>
-    <div class="header">
+    <div class="header" id="header">
       <div class="title">
         <h2>Swipes</h2>
       </div>
-      <div class="panel-number">
+      <div class="center">
+        <button class="control" id="previous"><i class="fas fa-arrow-left"></i></button>
         <span id="pn">1</span>
+        <button class="control" id="next"><i class="fas fa-arrow-right"></i></button>
       </div>
       <div class="controls">
-        <button class="control" id="next"></button>
-        <button class="control" id="previous"></button>
-        <button class="control" id="volume"></button>
+        <label class="checkbox">Auto Scroll
+           <input type="checkbox" checked>
+           <span class="checkmark"></span>
+        </label>
+        <button class="control" id="volume"><i class="fas fa-volume-off"></i></button>
       </div>
     </div>
     <div class="content">
-      <div class="panel" id="panel"><img src="assets/01.png" alt=""></div>
-      <!-- <div class="panel" id="panel"><img src="assets/01.png" alt=""></div>
-      <div class="panel" id="panel"><img src="assets/01.png" alt=""></div>
-      <div class="panel" id="panel"><img src="assets/01.png" alt=""></div>
-      <div class="panel" id="panel"><img src="assets/01.png" alt=""></div>
-      <div class="panel" id="panel"><img src="assets/01.png" alt=""></div> -->
+      <div class="panel" id="panel1">
+        <div class="img-container"><img src="assets/01.png" alt=""></div>
+      </div>
+      <div class="panel" id="panel2">
+        <div class="img-container"><img src="assets/02.jpg" alt=""></div>
+      </div>
+      <div class="panel" id="panel3">
+        <div class="img-container"><img src="assets/03.png" alt=""></div>
+      </div>
+      <div class="panel" id="panel4">
+        <div class="img-container"><img src="assets/04.png" alt=""></div>
+      </div>
+      <div class="panel" id="panel5">
+        <div class="img-container"><img src="assets/05.png" alt=""></div>
+      </div>
+      <div class="panel" id="panel6">
+        <div class="img-container"><img src="assets/06.png" alt=""></div>
+      </div>
     </div>
+    <button class="toTop" id="toTop"><i class="fas fa-arrow-up"></i></button>
 
-    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="js/scripts.js" charset="utf-8"></script>
   </body>
 </html>
