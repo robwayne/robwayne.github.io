@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Comic Talk";
+  src: url("../assets/fonts/ComicTalk.woff2") format("woff2");
+}
+
 * {
   padding:0;
   margin:0;
@@ -9,21 +14,29 @@ body, html {
   max-width:100%;
   height:100%;
   width:100%;
-  background:#fff;
+  background: url("../assets/wood-bg.png");
 }
 
 .header{
   width:100%;
   height:50px;
-  background:#25292E;
+  background:#fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color:#fff;
+  color:#907C6C;//#57483D;
   position: fixed;
   top:0;
   left:0;
   right:0;
+  z-index:100;
+}
+
+.shadow{
+  -o-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 }
 
 .center{
@@ -35,7 +48,7 @@ body, html {
 }
 
 #pn{
-  border: 1px solid #fff;
+  border: 1px solid #907C6C;//#57483D;
   width:35px;
   text-align: center;
   height:25px;
@@ -50,11 +63,11 @@ body, html {
   height:40px;
   border:none;
   border-radius: 50%;
-  background: #25292E;
+  background: #fff;
   font-size:1.5em;
   font-weight: bold;
   box-shadow:3px 4px 5px rgba(0,0,0,0.3);
-  color:#fff;
+  color:#907C6C;
   line-height: 40px;
   text-align: center;
   position: fixed;
@@ -70,38 +83,39 @@ body, html {
 
 .title{
   margin-left:30px;
+  color:#57068c;
 }
 
+
 .title h2{
-  font-family: 'Indie Flower', cursive;
-  font-size:2.4em;
+  font-family: 'Comic Talk', sans-serif;
+  font-size:2.3em;
 }
 
 .controls{
-  width:150px;
+  width:160px;
   margin-right:30px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  border: 1px solid #fff;
+  justify-content: space-between;
 }
 
 .control{
   width:30px;
   height: 30px;
-  color:white;
+  color:#907C6C;//#57483D;
   background: none;
-  font-size:1.7em;
+  font-size:1.5em;
   border:none;
   outline:none;
 }
 
-.control:hover{
-  cursor:pointer;
+#volume{
+  color:#808080;
 }
 
-#volume{
-  border-left: 1px solid #fff;
+.control:hover{
+  cursor:pointer;
 }
 
 .content{
@@ -109,6 +123,7 @@ body, html {
   width: 100%;
   margin-top: 50px;
   min-height: 100%;
+  //height: 100%;
 }
 
 .panel {
@@ -118,11 +133,48 @@ body, html {
   height:100%;
   display: flex;
   justify-content: center;
+  background: none;
+}
+
+#panel6{
+  margin-bottom:40px;
+}
+
+#panel1{
+  overflow: hidden;
+}
+
+.panel:not(#panel1){
+    margin-top:40px;
+}
+
+canvas{
+  min-width: 30%;
+  min-height: 90%;
+  width:30%;
+  height: 90%;
+  margin-top:20px;
+  background: none;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+
+#img2{
+  background: white;
 }
 
 .img-container{
+  max-width:100%;
+  min-height:100%;
   width:70%;
   height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  border:1px solid #000;
+  box-shadow: 0 0 5px #000;
 }
 
 .img-container img{
@@ -130,19 +182,28 @@ body, html {
   max-height: 100%;
   width: 100%;
   height: 100%;
-  border: 1px solid #25292E;
+  background: white;
 }
 
 
+.disabled{
+  color:#DCDCDC;
+}
+
+.disabled:hover{
+  cursor: not-allowed;
+}
+
 /* taken and editted to suit this site from https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
 .checkbox {
-    display: block;
-    position: relative;
-    padding-left: 25px;
-    cursor: pointer;
-    font-size: 1.1em;
-    font-family: 'Poppins',sans-serif;
-    user-select: none;
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 1.3em;
+  font-family: 'Poppins',sans-serif;
+  user-select: none;
 }
 
 /* Hide the browser's default checkbox */
@@ -172,7 +233,7 @@ body, html {
 
 /* When the checkbox is checked, add a blue background */
 .checkbox input:checked ~ .checkmark {
-    background-color: #fff;
+    background-color: #907C6C;//#57483D;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -191,7 +252,7 @@ body, html {
 .checkbox .checkmark:after {
     width: 4px;
     height: 8px;
-    border: solid #25292E;
+    border: solid #fff;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
 }

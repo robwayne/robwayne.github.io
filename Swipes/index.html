@@ -17,13 +17,13 @@
         <h2>Swipes</h2>
       </div>
       <div class="center">
-        <button class="control" id="previous"><i class="fas fa-arrow-left"></i></button>
+        <button class="control" id="previous-btn"><i class="fas fa-arrow-left"></i></button>
         <span id="pn">1</span>
-        <button class="control" id="next"><i class="fas fa-arrow-right"></i></button>
+        <button class="control" id="next-btn"><i class="fas fa-arrow-right"></i></button>
       </div>
       <div class="controls">
         <label class="checkbox">Auto Scroll
-           <input type="checkbox" checked>
+           <input type="checkbox" id="autoScroll" checked="checked">
            <span class="checkmark"></span>
         </label>
         <button class="control" id="volume"><i class="fas fa-volume-off"></i></button>
@@ -31,13 +31,13 @@
     </div>
     <div class="content">
       <div class="panel" id="panel1">
-        <div class="img-container"><img src="assets/01.png" alt=""></div>
+        <div class="img-container" id="img2"><canvas id="panel1-canvas" resize></canvas></div>
       </div>
       <div class="panel" id="panel2">
         <div class="img-container"><img src="assets/02.jpg" alt=""></div>
-      </div>
+        </div>
       <div class="panel" id="panel3">
-        <div class="img-container"><img src="assets/03.png" alt=""></div>
+        <div class="img-container" id="panel3-container"><img src="assets/03_01.png" id="panel3-img"></div>
       </div>
       <div class="panel" id="panel4">
         <div class="img-container"><img src="assets/04.png" alt=""></div>
@@ -50,8 +50,16 @@
       </div>
     </div>
     <button class="toTop" id="toTop"><i class="fas fa-arrow-up"></i></button>
+    <audio id="d2audio" loop>
+      <source src="assets/audio/d2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="d2audio" loop>
+      <source src="assets/audio/sms-notif.mp3" type="audio/mpeg">
+    </audio>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/js/paperjs/paper-full.js"></script>
+    <script src="js/panel2.js"></script>
     <script src="js/scripts.js" charset="utf-8"></script>
   </body>
 </html>
