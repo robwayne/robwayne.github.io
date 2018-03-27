@@ -140,7 +140,7 @@ body, html {
   margin-bottom:40px;
 }
 
-#panel1{
+#panel2,#panel4{
   overflow: hidden;
 }
 
@@ -148,11 +148,11 @@ body, html {
     margin-top:40px;
 }
 
-canvas{
+#panel2-canvas,#panel4-canvas{
   min-width: 30%;
-  min-height: 90%;
+  min-height: 100%;
   width:30%;
-  height: 90%;
+  height: 100%;
   margin-top:20px;
   background: none;
   position: absolute;
@@ -161,7 +161,7 @@ canvas{
 }
 
 
-#img2{
+#img2,#img4{
   background: white;
 }
 

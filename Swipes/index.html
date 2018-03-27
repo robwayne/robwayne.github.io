@@ -31,16 +31,16 @@
     </div>
     <div class="content">
       <div class="panel" id="panel1">
-        <div class="img-container" id="img2"><canvas id="panel1-canvas" resize></canvas></div>
+        <div class="img-container"><img src="assets/02.jpg" alt=""></div>
       </div>
       <div class="panel" id="panel2">
-        <div class="img-container"><img src="assets/02.jpg" alt=""></div>
-        </div>
+        <div class="img-container" id="img2"><canvas id="panel2-canvas"></canvas></div>
+      </div>
       <div class="panel" id="panel3">
         <div class="img-container" id="panel3-container"><img src="assets/03_01.png" id="panel3-img"></div>
       </div>
       <div class="panel" id="panel4">
-        <div class="img-container"><img src="assets/04.png" alt=""></div>
+        <div class="img-container" id="img4"><canvas id="panel4-canvas" resize></canvas></div>
       </div>
       <div class="panel" id="panel5">
         <div class="img-container"><img src="assets/05.png" alt=""></div>
@@ -53,13 +53,14 @@
     <audio id="d2audio" loop>
       <source src="assets/audio/d2.mp3" type="audio/mpeg">
     </audio>
-    <audio id="d2audio" loop>
+    <audio id="sms-audio">
       <source src="assets/audio/sms-notif.mp3" type="audio/mpeg">
     </audio>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="/js/paperjs/paper-full.js"></script>
     <script src="js/panel2.js"></script>
+    <script src="js/panel4.js"></script>
     <script src="js/scripts.js" charset="utf-8"></script>
   </body>
 </html>
