@@ -39,7 +39,7 @@ $(document).ready(() => {
   let autoScroll = false, muted = false, didScroll = false, mouseMoved = false;
 
   d2Audio = document.getElementById("d2audio");
-  d2Audio.volume = 0;
+  d2Audio.volume = 0.3;
   d2Audio.play();
 
   //---------HEADER CONTROLS---------
@@ -59,12 +59,14 @@ $(document).ready(() => {
   });
 
   $("#next-btn").click(()=>{
+    scrollDown();
+  });
 
+  $("#previous-btn").click(()=>{
+    scrollUp();
   });
 
 
-
-  $("#previousButton-btn").click(()=>{});
   //---------HEADER CONTROLS---------
 
   $(window).scroll(() =>{
@@ -177,9 +179,13 @@ $(document).ready(() => {
     updatePageNumber();
   }
 
-  $("#previous-btn").click(()=>{
-    console.log("go back");
-  });
+scrollUp = () => {
+  currentPanel = panels[currentPanelIndex-1];
+  $('html, body').animate({
+    scrollTop: $(currentPanel).offset().top
+  },900);
+  updatePageNumber(currentPanelIndex-1);
+}
 
   updatePageNumber = (index = ((currentPanelIndex + 1) % panels.length)) => {
     currentPanelIndex = index;
