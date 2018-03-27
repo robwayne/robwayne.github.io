@@ -1,5 +1,13 @@
 $(document).ready(() => {
 
+  $("#panel1-container").mouseover(()=>{
+    $("#panel1-img").prop("src","assets/01_02.png");
+  });
+
+  $("#panel1-container").mouseleave(()=>{
+    $("#panel1-img").prop("src","assets/01_01.png");
+  });
+
   $("#panel3-container").mouseover(()=>{
     $("#panel3-img").prop("src","assets/03_02.png");
   });
@@ -8,11 +16,27 @@ $(document).ready(() => {
     $("#panel3-img").prop("src","assets/03_01.png");
   });
 
+  $("#panel5-container").mouseover(()=>{
+    $("#panel5-img").prop("src","assets/05_02.png");
+  });
+
+  $("#panel5-container").mouseleave(()=>{
+    $("#panel5-img").prop("src","assets/05_01.png");
+  });
+
+  $("#panel6-container").mouseover(()=>{
+    $("#panel6-img").prop("src","assets/06_02.png");
+  });
+
+  $("#panel6-container").mouseleave(()=>{
+    $("#panel6-img").prop("src","assets/06_01.png");
+  });
+
   const panels = ["#panel1","#panel2","#panel3","#panel4","#panel5","#panel6"];
   let currentPanelIndex = 0, lastScroll = 0, scrollDelta = 5;
   let headerHeight = $("#header").outerHeight();
   let currentPanel = panels[currentPanelIndex];
-  let autoScroll = true, muted = false, didScroll = false, mouseMoved = false;
+  let autoScroll = false, muted = false, didScroll = false, mouseMoved = false;
 
   d2Audio = document.getElementById("d2audio");
   d2Audio.volume = 0;
@@ -114,7 +138,7 @@ $(document).ready(() => {
     if (autoScroll) {
       scrollDown();
     }
-  },5000);
+  },20000);
 
   //unchecks the autoScroll checkbox
   uncheckAutoScroll = () => {
@@ -145,15 +169,15 @@ $(document).ready(() => {
   })
 
   //recognize all clicks on the document in order to scroll to next panel
-  $(".content").click(()=>{
-    autoScroll = $("#autoScroll").prop('checked');
-    if (!autoScroll) {
-      scrollDown();
-    }
-  });
+  // $(".content").click(()=>{
+  //   autoScroll = $("#autoScroll").prop('checked');
+  //   if (!autoScroll) {
+  //     scrollDown();
+  //   }
+  // });
 
   scrollDown = () => {
-    currentPanel = panels[currentPanelIndex+1];
+    //currentPanel = panels[currentPanelIndex+1];
     $('html, body').animate({
       scrollTop: $(currentPanel).offset().top+50
     },900);

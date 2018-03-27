@@ -8,6 +8,10 @@
   margin:0;
 }
 
+#panel5-container{
+  background: yellow;
+}
+
 body, html {
   min-width: 100%;
   min-height: 100%;
@@ -136,16 +140,16 @@ body, html {
   background: none;
 }
 
+.panel:not(#panel1){
+  margin-top:40px;
+}
+
 #panel6{
   margin-bottom:40px;
 }
 
 #panel2,#panel4{
   overflow: hidden;
-}
-
-.panel:not(#panel1){
-    margin-top:40px;
 }
 
 #panel2-canvas,#panel4-canvas{

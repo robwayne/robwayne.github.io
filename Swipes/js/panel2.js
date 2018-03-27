@@ -3,7 +3,7 @@ let smsNotif = document.getElementById("sms-audio");
 
 paper.setup(canvas);
 
-paper.project.importSVG('assets/panel2.svg', (item, origin)=>{
+paper.project.importSVG('assets/panel2s.svg', (item, origin)=>{
   let height = item.bounds.height;
   let width = item.bounds.width;
   let ratio = height/width;
@@ -40,24 +40,3 @@ paper.project.importSVG('assets/panel2.svg', (item, origin)=>{
   }
 
 });
-
-
-loadNewSVG = (svg) => {
-  paper.project.clear();
-
-  paper.project.importSVG(svg, (item,origin) => {
-    let height = item.bounds.height;
-    let width = item.bounds.width;
-    let ratio = height/width;
-    let sendButton = item.children.send_button;
-
-    $("#panel2").height($(window).height());
-    $("#panel2").width($(window).width());
-
-    width = $("#img2").width()*0.5;
-    height = width * ratio;
-    item.bounds.width = width;
-    item.bounds.height = height;
-  }, false);
-
-}
