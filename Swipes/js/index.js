@@ -114,7 +114,7 @@ $(document).ready(() => {
     if (autoScroll) {
       scrollDown();
     }
-  },20000);
+  },5000);
 
   //unchecks the autoScroll checkbox
   uncheckAutoScroll = () => {
@@ -153,10 +153,10 @@ $(document).ready(() => {
   });
 
   scrollDown = () => {
-    currentPanel = panels[currentPanelIndex];
+    currentPanel = panels[currentPanelIndex+1];
     $('html, body').animate({
-      scrollTop: $(currentPanel).offset().top
-    },400);
+      scrollTop: $(currentPanel).offset().top+50
+    },900);
     updatePageNumber();
   }
 
@@ -168,10 +168,5 @@ $(document).ready(() => {
     currentPanelIndex = index;
     $("#pn").html(currentPanelIndex+1);
   }
-
-  $("#send-button").click(()=>{
-    console.log("load new image");
-  });
-
 
 });

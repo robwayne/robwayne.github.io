@@ -3,7 +3,7 @@ let smsNotif = document.getElementById("sms-audio");
 
 paper.setup(canvas);
 
-paper.project.importSVG('assets/panel2_07.svg', (item, origin)=>{
+paper.project.importSVG('assets/panel2.svg', (item, origin)=>{
   let height = item.bounds.height;
   let width = item.bounds.width;
   let ratio = height/width;
