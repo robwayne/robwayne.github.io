@@ -13,7 +13,7 @@ paper.project.importSVG('assets/panel2s.svg', (item, origin)=>{
   $("#panel2").height($(window).height());
   $("#panel2").width($(window).width());
 
-  width = $("#img2").width()*0.5;
+  width = $("#img2").width()*0.6;
   height = width * ratio;
   item.bounds.width = width;
   item.bounds.height = height;
