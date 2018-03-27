@@ -168,16 +168,9 @@ $(document).ready(() => {
     updatePageNumber(0);
   })
 
-  //recognize all clicks on the document in order to scroll to next panel
-  // $(".content").click(()=>{
-  //   autoScroll = $("#autoScroll").prop('checked');
-  //   if (!autoScroll) {
-  //     scrollDown();
-  //   }
-  // });
 
   scrollDown = () => {
-    //currentPanel = panels[currentPanelIndex+1];
+    currentPanel = panels[currentPanelIndex+1];
     $('html, body').animate({
       scrollTop: $(currentPanel).offset().top+50
     },900);

@@ -8,10 +8,6 @@
   margin:0;
 }
 
-#panel5-container{
-  background: yellow;
-}
-
 body, html {
   min-width: 100%;
   min-height: 100%;
@@ -152,17 +148,24 @@ body, html {
   overflow: hidden;
 }
 
-#panel2-canvas,#panel4-canvas{
+#panel2-canvas{
   min-width: 40%;
   min-height: 90%;
-  width:50%;
+  width:40%;
   height: 90%;
   background: none;
   position: absolute;
   justify-content: center;
-  //background: red;
+  padding:0;
 }
 
+#panel4-canvas{
+  min-width: 50%;
+  min-height: 100vh;
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
 
 #img2,#img4{
   background: white;
