@@ -1,11 +1,16 @@
 @font-face {
   font-family: "Signerica Medium";
-  src: url("./30MFF/assets/fonts/signerica_medium-webfont.woff2") format("woff2");
+  src: url("./assets/fonts/signerica_medium-webfont.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Conture";
-  src: url("./assets/conture.woff2") format("woff2");
+  src: url("./assets/fonts/conture.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Comic Talk";
+  src: url("./assets/fonts/ComicTalk.woff2") format("woff2");
 }
 
 *{
@@ -123,5 +128,11 @@ div.project-img-section{
 #forty-acres .title{
   font-family: 'Conture',cursive;
   font-size: 3.5em;
+  font-weight: 400;
+}
+
+#swipes .title{
+  font-family: 'Comic Talk',sans-serif;
+  font-size: 1.5em;
   font-weight: 400;
 }
