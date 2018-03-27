@@ -36,7 +36,7 @@ $(document).ready(() => {
   let currentPanelIndex = 0, lastScroll = 0, scrollDelta = 5;
   let headerHeight = $("#header").outerHeight();
   let currentPanel = panels[currentPanelIndex];
-  let autoScroll = false, muted = false, didScroll = false, mouseMoved = false;
+  let autoScroll = true, muted = false, didScroll = false, mouseMoved = false;
 
   d2Audio = document.getElementById("d2audio");
   d2Audio.volume = 0.3;
