@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "Comic Talk";
+  src: url("../assets/fonts/ComicTalk.woff2") format("woff2");
+}
+
+body,html{
+  padding: 0;
+  margin:0;
+  min-height:100%;
+  min-width: 100%;
+  height: 100%;
+  width:100%;
+  color: #262626;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.container{
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/wood-bg.png");
+}
+
+.content{
+  height: 80%;
+  width:70%;
+  background:#fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-2deg);
+  transition: all 1s ease;
+}
+
+.content:hover{
+  transform: rotate(0);
+}
+
+.content-container{
+  width: 100%;
+  height: 50%;
+}
+
+.title{
+  width: 100%;
+  height: 40%;
+  font-family: 'Comic Talk',sans-serif;
+  font-size: 10em;
+  color:#57068c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description h1{
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size:5em;
+  font-style: italic;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.description h6{
+  margin:30px 0;
+  font-family: 'Nunito',sans-serif;
+  font-weight: 200;
+  font-size: 1.2em;
+  text-align: center;
+  width: 60%;
+  margin-left:20%;
+}
+
+.important{
+  font-weight: 600;
+  text-decoration:underline;
+
+  color:#57068c;
+}
+
+.splash-btn{
+  text-decoration: none;
+  font-family: 'Nunito',sans-serif;
+  font-weight: 200;
+  font-size:2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100px;
+  margin:20px auto;
+  border-radius: 5px;
+  background: #1fc352;
+  color:#fff;
+  text-align: center;
+  transition: all 3s ease;
+}
+
+.splash-btn:hover{
+  text-decoration: underline;
+}

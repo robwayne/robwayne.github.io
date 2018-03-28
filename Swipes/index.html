@@ -1,66 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Swipes</title>
-
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lato|Poppins" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100|Nunito:200" rel="stylesheet">
   </head>
   <body>
-    <div class="header" id="header">
-      <div class="title">
-        <h2>Swipes</h2>
-      </div>
-      <div class="center">
-        <button class="control" id="previous-btn"><i class="fas fa-arrow-left"></i></button>
-        <span id="pn">1</span>
-        <button class="control" id="next-btn"><i class="fas fa-arrow-right"></i></button>
-      </div>
-      <div class="controls">
-        <label class="checkbox">Auto Scroll
-           <input type="checkbox" id="autoScroll" checked="checked">
-           <span class="checkmark"></span>
-        </label>
-        <button class="control" id="volume"><i class="fas fa-volume-off"></i></button>
+    <div class="container">
+      <div class="content">
+        <div class="content-container">
+          <div class="title"><p>Swipes</p></div>
+          <div class="description">
+            <h1 id="hey">Hey!</h1>
+            <h6>Welcome to <span class="important">Swipes</span>, a narrative webcomic about good(?) friends, karma and the staple of NYUAD.
+              To reveal the dialogue <span class="important">hover</span> over the panels and <span class="important">click</span> where you are directed.
+            </h6>
+          </div>
+          <a href="comic.html" class="splash-btn" id="splash-btn"><p>READ</p></a>
+        </div>
       </div>
     </div>
-    <div class="content">
-      <div class="panel" id="panel1">
-        <div class="img-container" id="panel1-container"><img src="assets/01_01.png" id="panel1-img"></div>
-      </div>
-      <div class="panel" id="panel2">
-        <div class="img-container" id="img2"><canvas id="panel2-canvas"></canvas></div>
-      </div>
-      <div class="panel" id="panel3">
-        <div class="img-container" id="panel3-container"><img src="assets/03_01.png" id="panel3-img"></div>
-      </div>
-      <div class="panel" id="panel4">
-        <div class="img-container" id="img4"><canvas id="panel4-canvas" resize></canvas></div>
-      </div>
-      <div class="panel" id="panel5">
-        <div class="img-container" id="panel5-container"><img src="assets/05_01.png" id="panel5-img"></div>
-      </div>
-      <div class="panel" id="panel6">
-        <div class="img-container" id="panel6-container"><img src="assets/06_01.png" id="panel6-img"></div>
-      </div>
-    </div>
-    <button class="toTop" id="toTop"><i class="fas fa-arrow-up"></i></button>
-    <audio id="d2audio" loop>
-      <source src="assets/audio/d2.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="sms-audio">
-      <source src="assets/audio/sms-notif.mp3" type="audio/mpeg">
-    </audio>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="/js/paperjs/paper-full.js"></script>
-    <script src="js/panel2.js"></script>
-    <script src="js/panel4.js"></script>
-    <script src="js/index.js" charset="utf-8"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
