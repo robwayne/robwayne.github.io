@@ -68,6 +68,7 @@ paper.project.importSVG('assets/panel4.svg', (item, origin)=>{
         panel4CurrentMessageIndex += 1
         break;
       case 2:
+      smsNotif2.play();
         panel4HideLayer("five");
         panel4HideLayer("four");
         panel4UnHideLayer("six");
